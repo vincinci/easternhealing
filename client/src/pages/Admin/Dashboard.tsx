@@ -23,6 +23,7 @@ import {
   EventNote,
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { ErrorCodes } from '../../components/ErrorCodes';
 
 const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -154,6 +155,32 @@ const AdminDashboard: React.FC = () => {
                   </ListItemSecondaryAction>
                 </ListItem>
               </List>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Error Codes Reference */}
+        <Grid item xs={12}>
+          <Card sx={{ overflow: 'visible' }}>
+            <CardContent>
+              <Box sx={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'flex-start', 
+                mb: 3,
+                flexDirection: { xs: 'column', sm: 'row' },
+                gap: { xs: 2, sm: 0 }
+              }}>
+                <Box>
+                  <Typography variant="h6" sx={{ mb: 0.5 }}>
+                    Error Codes Reference
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 500 }}>
+                    Search, filter, and copy Vercel deployment error codes. Click on any error code to copy it to your clipboard.
+                  </Typography>
+                </Box>
+              </Box>
+              <ErrorCodes />
             </CardContent>
           </Card>
         </Grid>
